@@ -1,0 +1,12 @@
+{
+  "name": "bulten",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kullanıcı bilgi toplama formu",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.6"
+  }
+}

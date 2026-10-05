@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulten | Onloi</title>
+  <meta name="description" content="Bulten kullanıcı bilgi formu">
+  <link rel="stylesheet" href="/styles.css?v=4">
+</head>
+<body>
+  <main class="shell">
+    <section class="intro">
+      <div class="brand"><img src="/onloi-logo.png?v=1" alt="Bulten" /></div>
+      <div class="intro-copy">
+        <p class="eyebrow">Bilgi formu</p>
+        <h1>Tanıştığımıza<br><em>memnun olduk.</em></h1>
+       
+      </div>
+      <div class="intro-foot"><span class="dot"></span> Formu doldurmanız yaklaşık 1 dakika sürer.</div>
+    </section>
+
+    <section class="form-panel">
+      <div class="panel-top"><span>01 — Bilgileriniz</span><span class="required">* Zorunlu alan</span></div>
+      <form id="registrationForm" novalidate>
+        <div class="grid two">
+          <label>Ad <span>*</span><input name="firstName" autocomplete="given-name" required placeholder="Adınız"></label>
+          <label>Soyad <span>*</span><input name="lastName" autocomplete="family-name" required placeholder="Soyadınız"></label>
+        </div>
+        <div class="grid two">
+          <label>E-posta <span>*</span><input type="email" name="email" autocomplete="email" required placeholder="ornek@firma.com"></label>
+          <label>Telefon <span>*</span><input type="tel" name="phone" autocomplete="tel" required placeholder="05xx xxx xx xx"></label>
+        </div>
+        <label>Firma <span>*</span><input name="company" autocomplete="organization" required placeholder="Firma adınız"></label>
+        <div class="grid two">
+          <label>Sektör<select name="sector"><option value="">Seçiniz</option><option>Teknoloji</option><option>Finans</option><option>Üretim</option><option>Perakende</option><option>Sağlık</option><option>Eğitim</option><option>Hizmet</option><option>Diğer</option></select></label>
+          <label>İl<input name="city" autocomplete="address-level1" placeholder="İstanbul"></label>
+        </div>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="kvkk" required checked><span class="box"></span><span><a href="#" onclick="return false">KVKK aydınlatma metnini</a> okudum, kabul ediyorum. <b>*</b></span></label>
+          <label class="check"><input type="checkbox" name="verification" required><span class="box"></span><span>Bilgilerimin doğru olduğunu onaylıyorum. <b>*</b></span></label>
+        </div>
+        <p id="error" class="error" role="alert"></p>
+        <button type="submit" id="submitButton">Formu gönder <span>↗</span></button>
+        <p class="privacy">Bilgileriniz yalnızca iletişim amacıyla kullanılacaktır.</p>
+      </form>
+      <div id="success" class="success" hidden>
+        <div class="success-icon">✓</div><p class="eyebrow">Gönderim tamamlandı</p>
+        <h2>Formunuz gönderildi.</h2><p>Başvuru numaranız:</p><strong id="reference"></strong>
+        <p class="email-note" id="emailNote">Bu numara e-posta adresinize de gönderildi.</p>
+        <p class="redirect">Onloi.com'a yönlendiriliyorsunuz…</p>
+      </div>
+      <div id="duplicate" class="duplicate" hidden>
+        <div class="duplicate-icon">!</div><p class="eyebrow">Başvuru kontrolü</p>
+        <h2>Daha önce başvurdunuz.</h2>
+        <p>Bu e-posta veya telefon numarasıyla daha önce oluşturulmuş bir bilgi kaydınız bulunuyor.</p>
+        <div class="duplicate-card">
+          <div><span>Başvuru numarası</span><strong id="duplicateReference"></strong></div>
+          <div><span>Ad soyad</span><strong id="duplicateName"></strong></div>
+          <div><span>Firma</span><strong id="duplicateCompany"></strong></div>
+          <div><span>E-posta / telefon</span><strong id="duplicateContact"></strong></div>
+        </div>
+        <button type="button" class="back-button" id="backToForm">Forma dön</button>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
